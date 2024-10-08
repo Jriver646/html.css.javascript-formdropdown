@@ -18,9 +18,7 @@
 
       let firstValue = document.getElementById("first_value").value;
       let secondValue = document.getElementById("second_value").value;
-      let operation = document.getElementById("operation").value;
-      let expression = firstValue + operation + secondValue;
-      let output = eval(expression);
+      let output = firstValue + " " + secondValue;
       document.getElementById("output").innerHTML = output;
 
       return refreshDomAfterTriggeringEvent
@@ -32,8 +30,10 @@
 
 <body>
   <form id="myform">
-    Super Hero Name:<br/><input id="first_value" type="text"/><br/>
-    Super Hero Power:<br/><select id="second_value">
+    <label for="first_value"> Hero Name: </label> 
+    <br><input id="first_value" type="text"/><br> 
+    <label for="second_value"> Hero Power: </label>
+    <br/><select id="second_value">
       <option value="Super Speed">Super Speed</option>
       <option value="Flight">Flight</option>
       <option value="Power Ring">Power Ring</option>
