@@ -7,39 +7,41 @@
 
 <head>
   <!-- header begins here -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>Shopping Cart Test Suite</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Hero Registration</title>
 
-  <!-- Import the CPM test classes -->
-  <script src="./js/test/utils/TestingUtilities.js"></script>
-  <script src="./js/main/MainApplication.js"></script>
+  <script type="text/javascript">
+    function userInput() {
+      let refreshDomAfterTriggeringEvent = false;
+
+      let firstValue = document.getElementById("first_value").value;
+      let secondValue = document.getElementById("second_value").value;
+      let operation = document.getElementById("operation").value;
+      let expression = firstValue + operation + secondValue;
+      let output = eval(expression);
+      document.getElementById("output").innerHTML = output;
+
+      return refreshDomAfterTriggeringEvent
+
+    }
+  </script>
 
 </head>
 
-<!-- ---------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------- -->
-
 <body>
-  <!-- body begins here -->
-
-  View the `Console` tab of the `Developer Tools` to see output of the JavaScript Files
-
-
-
-
-  <!-- ====================================================== -->
-  <!-- ====================================================== -->
-  <footer>
-    <!-- footer of page begins here -->
-    <script src="./js/test/TestMainApplication.js"></script>
-  </footer> <!-- footer of page ends here -->
-  <!-- ====================================================== -->
-  <!-- ====================================================== -->
-
+  <form id="myform">
+    Super Hero Name:<br/><input id="first_value" type="text"/><br/>
+    Super Hero Power:<br/><select id="second_value">
+      <option value="Super Speed">Super Speed</option>
+      <option value="Flight">Flight</option>
+      <option value="Power Ring">Power Ring</option>
+      <option value="Invisibility">Invisibility</option>
+    </select><br>
+    <button id="submit_button" onClick="return userInput();">Submit</button>
+  </form>
+  <p id="output">placeholder text until the `submit_button` is clicked</p>
 </body>
 <!-- ---------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------- -->
